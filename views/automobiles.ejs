@@ -1,0 +1,59 @@
+<%- include('partials/_header'); -%>
+<br>
+<div class="container">
+    <div class="row">
+        <%if(data) { %>
+            <% for (var i = 0; i < data.length; i++) { %>
+                <div class="col-md-4 ">
+                    <div class="card mb-4 shadow product-card">
+                        <div class="overlay-box">
+                            <a class="image">
+                                <div class="image-overlay"></div>
+                                <!--imagen del producto-->
+                                <div class="doc" style="background: #ffffff;;">
+                                    <div class="box-Prod-img">
+                                        <img class='mx-auto img-thumbnail card-img-top' src="images/coche.jpg">
+                                    </div>
+                                </div>
+                            </a> 
+                        </div>                   
+                        <div class="card-body">
+                            <!--nombre del producto-->
+                            <a>
+                                <h3 class="card-title justify-content-center ">
+                                    <b><%= data[i].manufacturer %> <%= data[i].model %></b>
+                                </h3>
+                            </a>		
+                            <div class="d-flex justify-content-start card-subtitle">
+                                <!--cosas extras-->
+                            </div>
+                            <div class="d-flex justify-content-start card-subtitle product-price">
+                                <!--Detalles del productor-->
+                                Año del vehiculo: <%= data[i].year %>
+                                <br>
+                                Transmision: <%= data[i].gearbox %>
+                                <br>
+                                Pasajeros: <%= data[i].capacity %>
+                                <br>
+                                combustible: <%= data[i].fuel %>
+                            </div>
+                            <div class="d-flex justify-content-end card-subtitle product-price">
+                                <!--Precio del producto-->
+                                precio por dia
+                                <br>
+                                <%= data[i].costXday %>
+                            </div>
+            
+                            <br>
+            
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-outline-primary btn-block">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+<%- include('partials/_footer'); -%>

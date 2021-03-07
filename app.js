@@ -4,8 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config();
+var mysql = require('mysql');
+const myConnection =require('express-myconnection');
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/cars');
 
 var app = express();
 
@@ -19,8 +23,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//DB Midelwares
+app.use(myConnection(mysql,{
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  database: process.env.DB_DATABASE
+},'single'));
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/cars', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

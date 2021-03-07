@@ -1,11 +1,68 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('partials/_header'); -%>
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="btn btn-secondary" href="/cars">Renta ya</a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="btn btn-secondary disabled" href="#">Renta y disfruta</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-6 font-italic">Los mejores modelos a precios economicos</h1>
+      <p class="lead my-3">
+        Los mejores mdoelos, en las mejores condiciones y 
+        a los mejores precios del mercado, todo a un click de distancia
+      </p>
+      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold btn-link disabled">Estamos esperando por ti</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Nissan</strong>
+          <h3 class="mb-0">Qashqai</h3>
+          <div class="mb-1 text-muted">2018</div>
+          <p class="card-text mb-auto">
+            El Nissan Qashqai es el coche que inició la tendencia de los SUVs familiares convencionales y, 
+            por difícil que sea creerlo ahora, fue visto como una especie de apuesta cuando se introdujo por primera vez en 2007.
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Subari</strong>
+          <h3 class="mb-0">Legacy</h3>
+          <div class="mb-1 text-muted">2018</div>
+          <p class="mb-auto">
+            El Legacy es el sedán mediano de Subaru así que compite directamente contra otros 
+            japoneses más fuertes como el Honda Accord, Toyota Camry y el alemán-estadounidense Volkswagen Passat.
+          </p>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <a href="/cars" type="button" class="btn btn-primary btn-lg btn-block">Ver todos los coches</a>
+
+  </div>
+</div>
+<%- include('partials/_footer'); -%>
